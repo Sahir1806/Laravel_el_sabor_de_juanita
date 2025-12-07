@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: url('../img/fondo-madera.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.registro-container {
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.registro-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(80, 40, 0, 0.3);
+  text-align: center;
+}
+
+.logo {
+  width: 70px;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  color: #8B4513;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+  color: #6b3e26;
+}
+
+input {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.cuenta {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.boton {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #218838;
+}
+
+.boton.enlace {
+  text-align: center;
+}
+
+/* Responsive ajustes */
+@media (max-width: 480px) {
+  .registro-card {
+    padding: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .boton {
+    width: 100%;
+    margin: 10px 0;
+  }
+}

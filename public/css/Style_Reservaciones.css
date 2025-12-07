@@ -1,0 +1,82 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Quicksand', sans-serif;
+  background: url('../img/fondo-madera.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #4b2e1e;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.reservaciones {
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 2px solid #d2a679;
+  padding: 2rem;
+  max-width: 800px;
+  width: 100%;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(80, 40, 0, 0.2);
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+a {
+  font-family: "Lobster", sans-serif;
+  font-weight: 500;
+  color: #8B4513;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #5c3b2e;
+}
+
+.Links-logo {
+  margin-right: 10px;
+  margin-left: 10px;
+  max-width: 100%;
+  height: auto;
+}
+
+.Visitanos {
+  margin-top: auto;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 2px solid #d28f5c;
+  padding: 1rem;
+  box-shadow: 0 0 12px rgba(80, 40, 0, 0.15);
+  border-radius: 10px;
+  box-sizing: border-box;
+  max-width: 800px;
+  width: 100%;
+  margin: 2rem auto 0;
+}
+
+/* Footer */
+footer {
+  padding-block-start: 4rem;
+  color: #6b3e26;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive ajustes */
+@media (max-width: 768px) {
+  .reservaciones,
+  .Visitanos {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .Links-logo {
+    display: block;
+    margin: 10px auto;
+  }
+
+  footer {
+    padding-block-start: 2rem;
+    font-size: 0.85rem;
+  }
+}

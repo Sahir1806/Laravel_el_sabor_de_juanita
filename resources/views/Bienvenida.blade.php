@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('css/Style_Inicio.css') }}">
+<link rel="stylesheet" href="{{ asset('css/Style_Imagenes.css') }}">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="{{ asset('css/Style_Inicio.css') }}">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lobster&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
 
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <title>El Sabor de Juanita</title>
 </head>
 
@@ -68,13 +67,15 @@
     <hr>
 
 
-  <section class="Secciones mt-5 p-4 rounded shadow">
-    <img src="{{ asset('images/Banner 1') }}">
-    <img src="{{ asset('images/Banner3') }}">
-    <img src="{{ asset('images/Banner10') }}">
-    <img src="{{ asset('images/Banner8') }}">
-    <img src="{{ asset('images/Banner 5') }}">
-  </section>
+<div class="imagenes">
+  <img src="{{ asset('images/Banner9.jpg') }}" alt="Banner 1">
+  <img src="{{ asset('images/Banner3.jpg') }}" alt="Banner 3">
+  <img src="{{ asset('images/Banner10.jpg') }}" alt="Banner 10">
+  <img src="{{ asset('images/Banner8.jpg') }}" alt="Banner 8">
+  <img src="{{ asset('images/Banner 5.jpg') }}" alt="Banner 5">
+</div>
+
+<hr>
 
     <div class="Visitanos">
         <div class="contenedor_footer">
@@ -104,7 +105,7 @@
                             alt="Facebook" width="35"></a>
 
 
-                    <a class="Links-logo" href="https://www.instagram.com/sabor_juanita42/"><img src="{{ asset('images/facebook.png') }}"
+                    <a class="Links-logo" href="https://www.instagram.com/sabor_juanita42/"><img src="{{ asset('images/Instagram.png') }}"
                             alt="Facebook" width="35"></a>
 
 

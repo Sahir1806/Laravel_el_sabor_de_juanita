@@ -18,7 +18,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2940b3;">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="asset('images/El_sabor_de_juanita_isotipo.jpg') }}" alt="Logo" width="30" height="30" class="Hover">
+                    <img src="{{ asset('images/El_sabor_de_juanita_isotipo.jpg') }}" alt="Logo" width="30" height="30" class="Hover">
                     El Sabor de Juanita
                 </a>
 
@@ -49,7 +49,15 @@
 
         <div class="container mt-4 p-4 rounded shadow" style="background-color: #fff8f0; border: 2px solid #f0c090;">
             <h3 class="text-center fw-bold text-dark mb-4">Nuestro Menú</h3>
-            <div class="row justify-content-center"> </div>
+         <hr>
+         <div class="row justify-content-center">
+         <div class="col-lg-10 text-center">
+        <img src="{{ asset('images/Menu.jpeg') }}" alt="Menú El Sabor de Juanita" class="img-fluid rounded shadow" style="width: 100%; max-width: 1000px;">
+         <hr>
+         <p>Deleitate con nuestras comidas típicas, guirilas rellenas y bebidas tradicionales nicaragüenses. ¡Sabores que cuentan historias!</p>
+        </div>
+     </div>
+</div>
 
 
         </div>
@@ -82,7 +90,7 @@
                             alt="Facebook" width="35"></a>
 
 
-                    <a class="Links-logo" href="https://www.instagram.com/sabor_juanita42/"><img src="{{ asset('images/facebook.png') }}"
+                    <a class="Links-logo" href="https://www.instagram.com/sabor_juanita42/"><img src="{{ asset('images/Instagram.png') }}"
                             alt="Facebook" width="35"></a>
 
 
