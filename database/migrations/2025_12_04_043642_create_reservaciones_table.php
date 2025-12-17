@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('nombre');
             $table->integer('personas');
             $table->date('fecha');
-            $table->string('comentario');
-            $table->integer('telefono');
+            $table->string('comentarios');
+            $table->string('telefono');
             $table->string('correo');
             $table->timestamps();
         });
