@@ -10,9 +10,9 @@ class DatabaseSeeder extends Seeder
 {
     use WithoutModelEvents;
 
-    public function run(): void
+/* public function run(): void
     {
-        // User::factory(10)->create();
+          // User::factory(10)->create();
 
         User::factory()->create([
             'nombre' => 'Juan Perez',
@@ -23,5 +23,5 @@ class DatabaseSeeder extends Seeder
             'correo' => 'jjuanp@gmail.com' ,
         ]);
         $this->call(ReservacionesSeeder::class);
-    }
+    }*/
 }

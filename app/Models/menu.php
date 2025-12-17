@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Promociones extends Model
+class menu extends Model
 {
     //
 }

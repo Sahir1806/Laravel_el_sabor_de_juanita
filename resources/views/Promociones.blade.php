@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promociones | El Sabor de Juanita</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>  
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lobster&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/Style_Promociones.css') }}">
 </head>
 
@@ -16,7 +17,8 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" style="background-color: #cacacbff;">
             <a class="navbar-brand" href="#">
-               <img src="{{ asset('images/El_sabor_de_juanita_isotipo.jpg') }}" alt="Logo" width="30" height="30" class="Hover">
+                <img src="{{ asset('images/El_sabor_de_juanita_isotipo.jpg') }}" alt="Logo" width="30" height="30"
+                    class="Hover">
                 El Sabor de Juanita
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -31,38 +33,39 @@
     </nav>
     <hr>
 
-<section class="promociones">
-  <div class="promo-card">
-    <img src="{{ asset('images/tajadaconqueso.jpg') }}" alt="Combo Nica">
-    <div class="promo-content">
-      <h3>Combo Nica</h3>
-      <p>Gallo pinto, tajadas, queso frito y café por solo C$120. ¡Solo este mes!</p>
-    </div>
-  </div>
+    <section class="promociones">
+        <div class="promo-card">
+            <img src="{{ asset('images/tajadaconqueso.jpg') }}" alt="Combo Nica">
+            <div class="promo-content">
+                <h3>Combo Nica</h3>
+                <p>Gallo pinto, tajadas, queso frito y café por solo C$120. ¡Solo este mes!</p>
+            </div>
+        </div>
 
-  <div class="promo-card">
-    <img src="{{ asset('images/jugosnaturales[1].jpg') }}" alt="2x1 Jugos">
-    <div class="promo-content">
-      <h3>2x1 en Jugos Naturales</h3>
-      <p>Disfruta de nuestros jugos tropicales en promoción todos los viernes.</p>
-    </div>
-  </div>
+        <div class="promo-card">
+            <img src="{{ asset('images/jugosnaturales[1].jpg') }}" alt="2x1 Jugos">
+            <div class="promo-content">
+                <h3>2x1 en Jugos Naturales</h3>
+                <p>Disfruta de nuestros jugos tropicales en promoción todos los viernes.</p>
+            </div>
+        </div>
 
-  <div class="promo-card">
-    <img src="{{ asset('images/Banner10.jpg') }}" alt="Descuento Estudiantes">
-    <div class="promo-content">
-      <h3>Descuento Estudiantil</h3>
-      <p>Presenta tu carnet y recibe 15% de descuento en tu orden.</p>
-    </div>
-  </div>
-</section>
+        <div class="promo-card">
+            <img src="{{ asset('images/Banner10.jpg') }}" alt="Descuento Estudiantes">
+            <div class="promo-content">
+                <h3>Descuento Estudiantil</h3>
+                <p>Presenta tu carnet y recibe 15% de descuento en tu orden.</p>
+            </div>
+        </div>
+    </section>
 
 
     <hr>
 
     <div class="Visitanos">
         <div class="contenedor_footer">
-            <div class="container mt-5 p-4 rounded shadow" style="background-color: #fff8f0; border: 2px solid #f0c090;">
+            <div class="container mt-5 p-4 rounded shadow"
+                style="background-color: #fff8f0; border: 2px solid #f0c090;">
                 <h4 class="fw-bold text-center mb-4 text-dark">Visítanos</h4>
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -84,15 +87,16 @@
                 </div>
 
                 <div class="text-center mt-3">
-                    <a class="Links-logo" href="https://www.facebook.com/share/16mCJU6u96/"><img src="{{ asset('images/facebook.png') }}"
-                            alt="Facebook" width="35"></a>
+                    <a class="Links-logo" href="https://www.facebook.com/share/16mCJU6u96/"><img
+                            src="{{ asset('images/facebook.png') }}" alt="Facebook" width="35"></a>
 
 
-                    <a class="Links-logo" href="https://www.instagram.com/sabor_juanita42/"><img src="{{ asset('images/Instagram.png') }}"
-                            alt="Facebook" width="35"></a>
+                    <a class="Links-logo" href="https://www.instagram.com/sabor_juanita42/"><img
+                            src="{{ asset('images/Instagram.png') }}" alt="Facebook" width="35"></a>
 
 
-                    <a class="Links-logo" href="https://www.tiktok.com/@saborjuanaita_?is_from_webapp=1&sender_device=pc"><img
+                    <a class="Links-logo"
+                        href="https://www.tiktok.com/@saborjuanaita_?is_from_webapp=1&sender_device=pc"><img
                             src="{{ asset('images/images.png') }}" alt="Tiktok" width="35"></a>
 
                 </div>
