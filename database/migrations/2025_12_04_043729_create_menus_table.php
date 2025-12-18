@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('url');
+            $table->date('fecha_publicación');
+            $table->boolean('estado');
             $table->timestamps();
         });
     }
