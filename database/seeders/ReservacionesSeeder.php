@@ -20,6 +20,13 @@ class ReservacionesSeeder extends Seeder
             'comentarios' => 'Mesa cerca de la ventana',
             'telefono' => '5551234567',
             'correo' => 'jjuanp@gmail.com' ]);
+            Reservaciones::create([
+            'nombre' => 'Juana Perez',
+            'personas' => 4,
+            'fecha' => '2024-07-15',
+            'comentarios' => 'Mesa cerca de la ventana',
+            'telefono' => '5551234567',
+            'correo' => 'jjuanp@gmail.com' ]);
 
     }
 }
