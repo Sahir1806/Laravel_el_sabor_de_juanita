@@ -27,6 +27,12 @@ class MenuSeeder extends Seeder
             'estado' => true,
         ]);
 
+        Menu::create([
+            'nombre' => 'Menú Principal',
+            'url' => '/menu/principal',
+            'fecha_publicación' => '2024-06-01',
+            'estado' => true,
+        ]);
 
     }
 }
