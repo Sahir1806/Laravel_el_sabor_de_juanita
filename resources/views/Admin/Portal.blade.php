@@ -20,16 +20,16 @@
                         <a class="nav-link" href="portal">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="historial_Bienvenida">Bienvenida</a>
+                        <a class="nav-link" href="historial_bienvenida">Bienvenida</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="historial_Reservaciones">Reservaciones</a>
+                        <a class="nav-link" href="historial_reservaciones">Reservaciones</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Menu_Verificacion">Menú</a>
+                        <a class="nav-link" href="menu_verificacion">Menú</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="historial_Promociones">Promociones</a>
+                        <a class="nav-link" href="historial_promociones">Promociones</a>
                     </li>
                 </ul>
             </div>

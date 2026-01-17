@@ -23,21 +23,21 @@ Route::get('/reservaciones',function() {
 });
 
 Route::get('/portal', function() {
-    return view('Portal');
+    return view('Admin/Portal');
 });
 
-Route::get('/historial_Bienvenida', function() {
-    return view('Historial_Bienvenida');
+Route::get('/historial_bienvenida', function() {
+    return view('Admin/Historial_Bienvenida');
 }); 
 
-Route::get('/historial_Promociones', function() {
-    return view('Historial_Promociones');
+Route::get('/historial_promociones', function() {
+    return view('Admin/Historial_Promociones');
 });
 
-Route::get('/historial_Reservaciones', function() {
-    return view('Historial_Reservaciones');
+Route::get('/historial_reservaciones', function() {
+    return view('Admin/Historial_Reservaciones');
 });
 
-Route::get('/Menu_Verificacion', function() {
-    return view('Menu_Verificacion');
+Route::get('/menu_verificacion', function() {
+    return view('Admin/Menu_Verificacion');
 });

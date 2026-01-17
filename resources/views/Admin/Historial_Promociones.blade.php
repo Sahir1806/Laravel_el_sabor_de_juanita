@@ -22,16 +22,16 @@
             <a class="nav-link" href="portal">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="historial_Bienvenida">Bienvenida</a>
+            <a class="nav-link" href="historial_bienvenida">Bienvenida</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="historial_Reservaciones">Reservaciones</a>
+            <a class="nav-link" href="historial_reservaciones">Reservaciones</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Menu_Verificacion">Menú</a>
+            <a class="nav-link" href="menu_verificacion">Menú</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="historial_Promociones">Promociones</a>
+            <a class="nav-link" href="historial_promociones">Promociones</a>
           </li>
         </ul>
       </div>
@@ -48,7 +48,7 @@
 
         <div class="card shadow-sm mb-4">
           <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
-            <span>Gestión de Reservaciones</span>
+            <span>Gestión de Promoción</span>
             <button class="btn btn-light btn-sm" data-bs-toggle="collapse" data-bs-target="#cartitaAcciones">
               Ver detalles
             </button>
@@ -63,41 +63,44 @@
                 </div>
 
                 <div class="mb-3">
-                  <label>Nombre:</label>
-                  <input type="text" name="nombre" class="form-control" placeholder="Ej. Gabriel Soza">
+                  <label>Título</label>
+                  <input type="text" name="Titulo" class="form-control" placeholder="Ej. Combo Nica">
                 </div>
 
                 <div class="mb-3">
-                  <label>Personas:</label>
-                  <input type="number" name="personas" class="form-control" placeholder="Ej. 4">
+                  <label>Descripción</label>
+                  <textarea name="Descripcion" class="form-control" rows="2" placeholder="Ej. Gallo pinto, tajadas..."></textarea>
+                </div>
+
+                <div class="mb-3">
+                  <label>Imagen</label>
+                  <input type="text" name="Imagen" class="form-control" placeholder="Ej. assets/img/combo.jpg">
+                </div>
+
+                <div class="mb-3">
+                  <label>Enlace</label>
+                  <input type="text" name="enlace" class="form-control" placeholder="Ej. https://...">
                 </div>
 
                 <div class="row mb-3">
                   <div class="col">
-                    <label>Fecha:</label>
-                    <input type="date" name="fecha" class="form-control">
+                    <label>Fecha de inicio</label>
+                    <input type="date" name="Fecha_inicio" class="form-control">
                   </div>
                   <div class="col">
-                    <label>Hora:</label>
-                    <input type="time" name="hora" class="form-control">
+                    <label>Fecha de fin</label>
+                    <input type="date" name="Fecha_fin" class="form-control">
                   </div>
                 </div>
 
                 <div class="mb-3">
-                  <label>Comentarios:</label>
-                  <textarea name="comentarios" class="form-control" rows="2" placeholder="Ej. Mesa cerca de la ventana"></textarea>
+                  <label>Estado</label>
+                  <select name="Estado" class="form-control">
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                  </select>
                 </div>
-
-                <div class="mb-3">
-                  <label>Teléfono:</label>
-                  <input type="tel" name="telefono" class="form-control" placeholder="Ej. 87541236">
-                </div>
-
-                <div class="mb-3">
-                  <label>Correo Electronico:</label>
-                  <input type="text" name="correo" class="form-control" placeholder="Ej. JoseGomez245@gmail.com">
-                </div>
-
+                <button type="submit" name="accion" value="guardar">Guardar</button>
                 <button type="submit" name="accion" value="actualizar">Actualizar</button>
                 <button type="submit" name="accion" value="eliminar">Eliminar</button>
               </form>
