@@ -107,6 +107,30 @@
             </div>
           </div>
           </form>
+          
+          <table>
+ 
+  <tr> 
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Imagen</th>
+    <th>Descripción</th>
+    <th>Descuento</th>
+    <th>Fecha Inicio</th>
+    <th>Fecha Fin</th>
+  </tr>
+  @foreach ($promociones as $promocion)
+  <tr> 
+    <td>{{ $promocion->id}}</td>
+    <td>{{ $promocion->nombre}}</td>
+    <td>{{ $promocion->imagen}}</td>
+    <td>{{ $promocion->descripcion }}</td>
+    <td>{{ $promocion->descuento}}</td>
+    <td>{{ $promocion->fecha_inicio }}</td>
+    <td>{{ $promocion->fecha_fin}}</td>
+  </tr>
+@endforeach
+</table>
 
           <!-- Footer -->
           <footer class="app-footer text-center mt-4">

@@ -92,6 +92,26 @@
                         </div>
                     </div>
 
+                              <table>
+ 
+  <tr> 
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Url</th>
+    <th>Fecha Pulicación</th>
+    <th>Estado</th>
+  </tr>
+  @foreach ($menus as $menu)
+  <tr> 
+    <td>{{ $menu->id}}</td>
+    <td>{{ $menu->nombre}}</td>
+    <td>{{ $menu->url}}</td>
+    <td>{{ $menu->fecha_publicación }}</td>
+    <td>{{ $menu->estado}}</td>
+  </tr>
+@endforeach
+</table>
+
                     <!-- Footer -->
                     <footer class="app-footer text-center mt-4">
                         <p>&copy; 2025 EL Sabor de Juanita. <br> Todos los derechos reservados.</p>

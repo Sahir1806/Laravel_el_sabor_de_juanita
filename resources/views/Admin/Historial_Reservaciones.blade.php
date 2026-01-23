@@ -104,6 +104,27 @@
             </div>
           </div>
           </form>
+<table>
+ 
+  <tr> 
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Personas</th>
+    <th>Fecha</th>
+    <th>Comentarios</th>
+    <th>Telefóno</th>
+  </tr>
+  @foreach ($reservaciones as $reservacion)
+  <tr> 
+    <td>{{ $reservacion->id}}</td>
+    <td>{{ $reservacion->nombre}}</td>
+    <td>{{ $reservacion->personas}}</td>
+    <td>{{ $reservacion->fecha }}</td>
+    <td>{{ $reservacion->comentarios }}</td>
+    <td>{{ $reservacion->telefono }}</td>
+  </tr>
+@endforeach
+</table>
 
           <!-- Footer -->
           <footer class="app-footer text-center mt-4">

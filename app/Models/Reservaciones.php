@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 class Reservaciones extends Model
 {
     protected $table = "reservaciones";
-    protected $fillable = ['nombre', 'personas', 'fecha','comentarios','telefono', 'correo'];
+    protected $fillable = ['nombre', 'personas', 'fecha', 'hora','comentarios','telefono', 'correo'];
 }
 
 

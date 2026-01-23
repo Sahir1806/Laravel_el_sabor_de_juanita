@@ -1,25 +1,29 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\ReservacionesController;
+use App\Http\Controllers\PromocionesController;
+use App\Http\Controllers\MenuController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/bienvenida', function() { 
-    return view('Bienvenida'); 
+    return view('/Public/Bienvenida'); 
 });
 
 Route::get('/menu',function() {
-    return view('Menu');
+    return view('/Public/Menu');
 });
 
 Route::get('/promociones',function() {
-    return view('Promociones');
+    return view('/Public/Promociones');
 });
 
 Route::get('/reservaciones',function() {
-    return view('Reservaciones');
+    return view('/Public/Reservaciones');
 });
 
 Route::get('/portal', function() {
@@ -40,4 +44,18 @@ Route::get('/historial_reservaciones', function() {
 
 Route::get('/menu_verificacion', function() {
     return view('Admin/Menu_Verificacion');
+});
+
+Route::get('/prueba', function() {
+    return view('/Prueba');
+});
+
+Route::get('/prueba', [UsuarioController::class, 'index']);
+Route::get('/historial_reservaciones', [ReservacionesController::class, 'index']);
+Route::get('/historial_promociones', [PromocionesController::class, 'index']);
+Route::get('/menu_verificacion', [MenuController::class, 'index']);
+Route::post('/guardar-reserva', [ReservacionesController::class, 'store'])->name('reservas.store');
+
+Route::get('/no', function() {
+    return view('/assets/header');
 });

@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('password',0)->nullable();
             $table->timestamps();
         });
+
+
+        
     }
 
     /**

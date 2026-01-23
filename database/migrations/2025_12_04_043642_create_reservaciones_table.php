@@ -10,18 +10,19 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
-        Schema::create('reservaciones', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombre');
-            $table->integer('personas');
-            $table->date('fecha');
-            $table->string('comentarios');
-            $table->string('telefono');
-            $table->string('correo');
-            $table->timestamps();
-        });
-    }
+{
+    Schema::create('reservaciones', function (Blueprint $table) {
+        $table->id();
+        $table->string('nombre');
+        $table->integer('personas');
+        $table->date('fecha');
+        $table->time('hora');
+        $table->string('telefono');
+        $table->string('correo');
+        $table->text('comentarios')->nullable();
+        $table->timestamps();
+    });
+}
 
     /**
      * Reverse the migrations.

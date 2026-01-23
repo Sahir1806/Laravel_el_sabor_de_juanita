@@ -52,7 +52,7 @@
                         <div class="card-custom p-3 shadow-sm">
                             <h6>Reservas</h6>
                             <small class="text-success">+1</small>
-                            <a href="historial_Reservaciones.php" class="btn btn-outline-success mt-3 w-100">
+                            <a href="historial_reservaciones" class="btn btn-outline-success mt-3 w-100">
                                 Ver historial de reservaciones
                             </a>
                         </div>
@@ -62,7 +62,7 @@
                         <div class="card-custom p-3 shadow-sm">
                             <h6>Promociones</h6>
                             <h4 class="text-muted">Verifica tus promociones</h4>
-                            <a href="historial_Promociones.php" class="btn btn-outline-success mt-3 w-100">
+                            <a href="historial_promociones" class="btn btn-outline-success mt-3 w-100">
                                 Ver historial de promociones
                             </a>
                         </div>
