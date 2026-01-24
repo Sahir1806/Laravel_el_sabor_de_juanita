@@ -5,6 +5,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\ReservacionesController;
 use App\Http\Controllers\PromocionesController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\HistorialPromocionesController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -55,6 +56,12 @@ Route::get('/historial_reservaciones', [ReservacionesController::class, 'index']
 Route::get('/historial_promociones', [PromocionesController::class, 'index']);
 Route::get('/menu_verificacion', [MenuController::class, 'index']);
 Route::post('/guardar-reserva', [ReservacionesController::class, 'store'])->name('reservas.store');
+Route::view('/reservar', 'Reservaciones')->name('reservaciones.form');
+Route::post('/reservar', [ReservacionesController::class, 'store'])->name('reservaciones.store');
+Route::get('/Historial_Reservaciones', [ReservacionesController::class, 'historial'])->name('reservaciones.historial');
+
+Route::get('/historial_hromociones', [HistorialPromocionesController::class, 'index'])->name('historial_promociones.index');
+Route::post('/historial_promociones', [HistorialPromocionesController::class, 'store'])->name('historial_promociones.store');
 
 Route::get('/no', function() {
     return view('/assets/header');

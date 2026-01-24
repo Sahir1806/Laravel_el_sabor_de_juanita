@@ -56,7 +56,8 @@
 
           <div id="cartitaAcciones" class="collapse">
             <div class="card-body">
-              <form action="" method="POST">
+              <form action="{{ route('historial_promociones.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="mb-3">
                   <label>ID (para actualizar o eliminar):</label>
                   <input type="text" name="id" class="form-control" placeholder="Ej. 1">

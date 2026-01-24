@@ -15,8 +15,6 @@
 
 
 <body style="background-color: #434dbc;">
-   
-@include('assets.header')
 
 <section class="reservaciones mt-5">
     <h2 class="text-center mb-4">Reservaciones</h2>

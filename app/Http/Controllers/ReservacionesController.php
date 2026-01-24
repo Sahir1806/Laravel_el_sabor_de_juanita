@@ -13,11 +13,33 @@ class ReservacionesController extends Controller
 
         return view('/Admin/Historial_Reservaciones', ['reservaciones' => $datos]);
     }
-    public function store(Request $request) 
+    public function store(Request $request)
     {
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'personas' => 'required|integer',
+            'fecha' => 'required|date',
+            'hora' => 'required',
+            'telefono' => 'required|string|max:20',
+            'correo' => 'required|email',
+            'comentarios' => 'nullable|string',
+        ]);
 
-        \App\Models\Reservaciones::create($request->all());
+            Reservaciones::create($request->all());
 
-        return redirect()->back()->with('mensaje', '¡Reserva guardada!');   
+    return redirect()->route('reservaciones.historial')
+                     ->with('success', '¡Reservación guardada correctamente!');
+
+        Reservaciones::create($request->all());
+
+        return redirect()->route('reservaciones.historial');
     }
+
+    public function historial()
+    {
+        $reservaciones = Reservaciones::latest()->get();
+        return view('Public/Reservaciones', compact('reservaciones'));
+    }
+
+
 }

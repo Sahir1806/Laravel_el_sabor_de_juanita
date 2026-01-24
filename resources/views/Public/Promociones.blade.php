@@ -13,8 +13,6 @@
 </head>
 
 <body>
-    @include('assets.header')
-    <hr>
 
 <section class="promociones">
   <div class="promo-card">
