@@ -15,7 +15,8 @@
 
 
 <body style="background-color: #434dbc;">
-
+ @include('assets.header')
+    <hr>
 <section class="reservaciones mt-5">
     <h2 class="text-center mb-4">Reservaciones</h2>
 
@@ -25,7 +26,7 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('reservas.store') }}">
+    <form method="POST" action="{{ route('reservaciones.store') }}">
         @csrf <div class="row g-3">
             <div class="col-md-6">
                 <label for="nombre" class="form-label">Nombre completo</label>

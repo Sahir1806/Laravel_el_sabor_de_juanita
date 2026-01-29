@@ -45,93 +45,105 @@
             <p class="text-muted">Aquí tienes tus promociones</p>
           </div>
         </div>
+         @if(session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+      @endif
+<div class="card shadow-sm mb-4">
+  <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+    <span>Gestión de Promoción</span>
+    <!-- Botón que despliega -->
+    <button class="btn btn-light btn-sm" data-bs-toggle="collapse" data-bs-target="#cartitaAcciones">
+      Ver detalles
+    </button>
+  </div>
 
-        <div class="card shadow-sm mb-4">
-          <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
-            <span>Gestión de Promoción</span>
-            <button class="btn btn-light btn-sm" data-bs-toggle="collapse" data-bs-target="#cartitaAcciones">
-              Ver detalles
-            </button>
-          </div>
+  <!-- Contenido colapsable -->
+  <div class="collapse" id="cartitaAcciones">
+    <div class="card-body">
 
-          <div id="cartitaAcciones" class="collapse">
-            <div class="card-body">
-              <form action="{{ route('historial_promociones.store') }}" method="POST" enctype="multipart/form-data">
+      <form action="{{ route('Historial_Promociones.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="mb-3">
+          <label class="form-label">Nombre:</label>
+          <input type="text" name="nombre" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Imagen:</label>
+          <input type="file" name="imagen" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Descripción:</label>
+          <textarea name="descripcion" class="form-control"></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Descuento (%):</label>
+          <input type="number" name="descuento" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Fecha Inicio:</label>
+          <input type="date" name="fecha_inicio" class="form-control">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Fecha Fin:</label>
+          <input type="date" name="fecha_fin" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-success">Guardar Promoción</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<hr>
+<div class="table-responsive">
+  <table class="table table-bordered table-striped align-middle w-100">
+    <thead class="table-dark">
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Imagen</th>
+        <th>Descripción</th>
+        <th>Descuento</th>
+        <th>Fecha Inicio</th>
+        <th>Fecha Fin</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach($promociones as $promo)
+        <tr>
+          <td>{{ $promo->id }}</td>
+          <td>{{ $promo->nombre }}</td>
+          <td>
+            <img src="{{ asset('promociones/' . $promo->imagen) }}" class="img-fluid img-thumbnail" width="100" alt="Imagen">
+          </td>
+          <td>{{ $promo->descripcion }}</td>
+          <td>{{ $promo->descuento }}%</td>
+          <td>{{ $promo->fecha_inicio }}</td>
+          <td>{{ $promo->fecha_fin }}</td>
+          <td>
+            <div class="d-flex gap-2">
+              <!-- Botón borrar -->
+              <form action="{{ route('Historial_Promociones.destroy', $promo->id) }}" method="POST">
                 @csrf
-                <div class="mb-3">
-                  <label>ID (para actualizar o eliminar):</label>
-                  <input type="text" name="id" class="form-control" placeholder="Ej. 1">
-                </div>
-
-                <div class="mb-3">
-                  <label>Título</label>
-                  <input type="text" name="Titulo" class="form-control" placeholder="Ej. Combo Nica">
-                </div>
-
-                <div class="mb-3">
-                  <label>Descripción</label>
-                  <textarea name="Descripcion" class="form-control" rows="2" placeholder="Ej. Gallo pinto, tajadas..."></textarea>
-                </div>
-
-                <div class="mb-3">
-                  <label>Imagen</label>
-                  <input type="text" name="Imagen" class="form-control" placeholder="Ej. assets/img/combo.jpg">
-                </div>
-
-                <div class="mb-3">
-                  <label>Enlace</label>
-                  <input type="text" name="enlace" class="form-control" placeholder="Ej. https://...">
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col">
-                    <label>Fecha de inicio</label>
-                    <input type="date" name="Fecha_inicio" class="form-control">
-                  </div>
-                  <div class="col">
-                    <label>Fecha de fin</label>
-                    <input type="date" name="Fecha_fin" class="form-control">
-                  </div>
-                </div>
-
-                <div class="mb-3">
-                  <label>Estado</label>
-                  <select name="Estado" class="form-control">
-                    <option value="Activo">Activo</option>
-                    <option value="Inactivo">Inactivo</option>
-                  </select>
-                </div>
-                <button type="submit" name="accion" value="guardar">Guardar</button>
-                <button type="submit" name="accion" value="actualizar">Actualizar</button>
-                <button type="submit" name="accion" value="eliminar">Eliminar</button>
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar esta promoción?')">Borrar</button>
               </form>
+
+              <!-- Botón editar -->
+              <a href="{{ route('Historial_Promociones.edit', $promo->id) }}" class="btn btn-warning btn-sm">Editar</a>
             </div>
-          </div>
-          </form>
-          
-          <table>
- 
-  <tr> 
-    <th>Id</th>
-    <th>Nombre</th>
-    <th>Imagen</th>
-    <th>Descripción</th>
-    <th>Descuento</th>
-    <th>Fecha Inicio</th>
-    <th>Fecha Fin</th>
-  </tr>
-  @foreach ($promociones as $promocion)
-  <tr> 
-    <td>{{ $promocion->id}}</td>
-    <td>{{ $promocion->nombre}}</td>
-    <td>{{ $promocion->imagen}}</td>
-    <td>{{ $promocion->descripcion }}</td>
-    <td>{{ $promocion->descuento}}</td>
-    <td>{{ $promocion->fecha_inicio }}</td>
-    <td>{{ $promocion->fecha_fin}}</td>
-  </tr>
-@endforeach
-</table>
+          </td>
+        </tr>
+      @endforeach
+    </tbody>
+  </table>
+</div>
 
           <!-- Footer -->
           <footer class="app-footer text-center mt-4">

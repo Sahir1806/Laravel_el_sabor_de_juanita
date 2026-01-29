@@ -56,60 +56,51 @@
 
                     <div id="cartitaAcciones" class="collapse">
                         <div class="card-body">
-                            <form action="" method="POST">
-                                <div class="mb-3">
-                                    <label>ID (para actualizar o eliminar):</label>
-                                    <input type="text" name="id" class="form-control" placeholder="Ej. 1">
-                                </div>
+                           <h2 class="mb-4">Verificación de Menús</h2>
 
-                                <div class="mb-3">
-                                    <label>Nombre</label>
-                                    <input type="text" name="nombre" class="form-control" placeholder="Ej. Combo Nica">
-                                </div>
+<form action="{{ route('Menu_Verificacion.store') }}" method="POST" class="mb-4">
+  @csrf
+  <div class="row g-3">
+    <div class="col-md-6"><input type="text" name="nombre" class="form-control" placeholder="Nombre del menú" required></div>
+    <div class="col-md-6"><input type="text" name="url" class="form-control" placeholder="URL" required></div>
+    <div class="col-md-6"><input type="date" name="fecha_publicación" class="form-control" required></div>
+    <div class="col-md-6">
+      <select name="estado" class="form-select">
+        <option value="1">Activo</option>
+        <option value="0">Inactivo</option>
+      </select>
+    </div>
+  </div>
+  <div class="text-end mt-3"><button type="submit" class="btn btn-success">Guardar Menú</button></div>
+</form>
+ </div>
+ </div>
 
-                                <div class="mb-3">
-                                    <label>Imagen:</label>
-                                    <input type="text" name="imagen" class="form-control" placeholder="Ej. assets/img/combo.jpg">
-                                </div>
+<hr>
 
-                                <div class="mb-3">
-                                    <label>Descripción</label>
-                                    <textarea name="descripcion" class="form-control" rows="2" placeholder="Ej. Gallo pinto, tajadas..."></textarea>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label>Estado:</label>
-                                    <select name="estado" class="form-control">
-                                        <option value="Activo">Activo</option>
-                                        <option value="Inactivo">Inactivo</option>
-                                    </select>
-                                </div>
-
-                                <button type="submit" name="accion" value="guardar">Guardar</button>
-                                <button type="submit" name="accion" value="actualizar">Actualizar</button>
-                                <button type="submit" name="accion" value="eliminar">Eliminar</button>
-                            </form>
-                        </div>
-                    </div>
-
-                              <table>
- 
-  <tr> 
-    <th>Id</th>
-    <th>Nombre</th>
-    <th>Url</th>
-    <th>Fecha Pulicación</th>
-    <th>Estado</th>
-  </tr>
-  @foreach ($menus as $menu)
-  <tr> 
-    <td>{{ $menu->id}}</td>
-    <td>{{ $menu->nombre}}</td>
-    <td>{{ $menu->url}}</td>
-    <td>{{ $menu->fecha_publicación }}</td>
-    <td>{{ $menu->estado}}</td>
-  </tr>
-@endforeach
+<table class="table table-bordered table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>ID</th><th>Nombre</th><th>URL</th><th>Fecha de Publicación</th><th>Estado</th><th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($menus as $menu)
+      <tr>
+        <td>{{ $menu->id }}</td>
+        <td>{{ $menu->nombre }}</td>
+        <td>{{ $menu->url }}</td>
+        <td>{{ $menu->fecha_publicación }}</td>
+        <td>{{ $menu->estado ? 'Activo' : 'Inactivo' }}</td>
+        <td>
+          <form action="{{ route('Menu_Verificacion.destroy', $menu->id) }}" method="POST">
+            @csrf @method('DELETE')
+            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Eliminar este menú?')">Eliminar</button>
+          </form>
+        </td>
+      </tr>
+    @endforeach
+  </tbody>
 </table>
 
                     <!-- Footer -->

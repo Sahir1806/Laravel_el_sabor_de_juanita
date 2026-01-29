@@ -5,21 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Reservaciones extends Model
+class MenuVerificacion extends Model
 {
     use HasFactory;
 
-    protected $table = 'reservaciones';
+    protected $table = 'menus';
 
     protected $fillable = [
         'nombre',
-        'personas',
-        'fecha',
-        'hora',
-        'telefono',
-        'correo',
-        'comentarios',
+        'url',
+        'fecha_publicación',
+        'estado',
     ];
 }
-
-

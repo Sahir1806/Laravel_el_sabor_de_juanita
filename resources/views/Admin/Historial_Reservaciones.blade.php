@@ -54,76 +54,48 @@
             </button>
           </div>
 
-          <div id="cartitaAcciones" class="collapse">
-            <div class="card-body">
-              <form action="" method="POST">
-                <div class="mb-3">
-                  <label>ID (para actualizar o eliminar):</label>
-                  <input type="text" name="id" class="form-control" placeholder="Ej. 1">
-                </div>
+<form action="{{ route('Historial_Reservaciones.store') }}" method="POST" class="mb-4">
+  @csrf
+  <div class="collapse" id="cartitaAcciones">
+    <div class="card-body">
+    <div class="col-md-6"><input type="text" name="nombre" class="form-control" placeholder="Nombre" required></div>
+    <div class="col-md-6"><input type="text" name="telefono" class="form-control" placeholder="Teléfono" required></div>
+    <div class="col-md-6"><input type="email" name="correo" class="form-control" placeholder="Correo" required></div>
+    <div class="col-md-6"><input type="date" name="fecha" class="form-control" required></div>
+    <div class="col-md-6"><input type="time" name="hora" class="form-control" required></div>
+    <div class="col-md-6"><input type="number" name="personas" class="form-control" placeholder="Personas" required></div>
+    <div class="col-12"><textarea name="comentarios" class="form-control" rows="2" placeholder="Comentarios"></textarea></div>
+  <div class="text-end mt-3"><button type="submit" class="btn btn-success">Guardar</button></div>
+  </div>
+</div>
+</form>
 
-                <div class="mb-3">
-                  <label>Nombre:</label>
-                  <input type="text" name="nombre" class="form-control" placeholder="Ej. Gabriel Soza">
-                </div>
-
-                <div class="mb-3">
-                  <label>Personas:</label>
-                  <input type="number" name="personas" class="form-control" placeholder="Ej. 4">
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col">
-                    <label>Fecha:</label>
-                    <input type="date" name="fecha" class="form-control">
-                  </div>
-                  <div class="col">
-                    <label>Hora:</label>
-                    <input type="time" name="hora" class="form-control">
-                  </div>
-                </div>
-
-                <div class="mb-3">
-                  <label>Comentarios:</label>
-                  <textarea name="comentarios" class="form-control" rows="2" placeholder="Ej. Mesa cerca de la ventana"></textarea>
-                </div>
-
-                <div class="mb-3">
-                  <label>Teléfono:</label>
-                  <input type="tel" name="telefono" class="form-control" placeholder="Ej. 87541236">
-                </div>
-
-                <div class="mb-3">
-                  <label>Correo Electronico:</label>
-                  <input type="text" name="correo" class="form-control" placeholder="Ej. JoseGomez245@gmail.com">
-                </div>
-
-                <button type="submit" name="accion" value="actualizar">Actualizar</button>
-                <button type="submit" name="accion" value="eliminar">Eliminar</button>
-              </form>
-            </div>
-          </div>
+<table class="table table-bordered table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Id</th><th>Nombre</th><th>Personas</th><th>Fecha</th><th>Hora</th><th>Teléfono</th><th>Correo</th><th>Comentarios</th><th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($reservaciones as $reserva)
+      <tr>
+        <td>{{ $reserva->id }}</td>
+        <td>{{ $reserva->nombre }}</td>
+        <td>{{ $reserva->personas }}</td>
+        <td>{{ $reserva->fecha }}</td>
+        <td>{{ $reserva->hora }}</td>
+        <td>{{ $reserva->telefono }}</td>
+        <td>{{ $reserva->correo }}</td>
+        <td>{{ $reserva->comentarios }}</td>
+        <td>
+          <form action="{{ route('Historial_Reservaciones.destroy', $reserva->id) }}" method="POST">
+            @csrf @method('DELETE')
+            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Eliminar esta reservación?')">Eliminar</button>
           </form>
-<table>
- 
-  <tr> 
-    <th>Id</th>
-    <th>Nombre</th>
-    <th>Personas</th>
-    <th>Fecha</th>
-    <th>Comentarios</th>
-    <th>Telefóno</th>
-  </tr>
-  @foreach ($reservaciones as $reservacion)
-  <tr> 
-    <td>{{ $reservacion->id}}</td>
-    <td>{{ $reservacion->nombre}}</td>
-    <td>{{ $reservacion->personas}}</td>
-    <td>{{ $reservacion->fecha }}</td>
-    <td>{{ $reservacion->comentarios }}</td>
-    <td>{{ $reservacion->telefono }}</td>
-  </tr>
-@endforeach
+        </td>
+      </tr>
+    @endforeach
+  </tbody>
 </table>
 
           <!-- Footer -->

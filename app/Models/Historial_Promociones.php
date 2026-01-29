@@ -4,18 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class HistorialPromociones extends Model
+class Historial_Promociones extends Model
 {
     protected $table = 'promociones';
 
     protected $fillable = [
-        'titulo',
-        'descripcion',
-        'imagen',
-        'enlace',
-        'fecha_inicio',
-        'fecha_fin',
-        'estado',
+        'nombre', 'imagen', 'descripcion', 'descuento', 'fecha_inicio', 'fecha_fin'
     ];
-
 }
+
