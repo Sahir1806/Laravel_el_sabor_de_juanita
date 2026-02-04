@@ -30,6 +30,10 @@
                     <div class="promo-content">
                         <h3>{{ $promocion->titulo }}</h3>
                         <p>{{ $promocion->descripcion }}</p>
+                        <small class="text-muted">
+                           Válido del {{ $promocion->fecha_inicio}} 
+                            al {{ $promocion->fecha_fin}}
+                        </small>    
                     </div>
                 </div>
             @endforeach

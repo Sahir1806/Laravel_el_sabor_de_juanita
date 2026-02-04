@@ -114,7 +114,7 @@
         <th>Acciones</th>
       </tr>
     </thead>
-    <tbody>
+    <body>
       @foreach($promociones as $promo)
         <tr>
           <td>{{ $promo->id }}</td>

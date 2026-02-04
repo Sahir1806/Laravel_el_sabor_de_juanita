@@ -77,9 +77,9 @@ Route::get('/historial_bienvenida', function() {
     return view('Admin/Historial_Bienvenida');
 }); 
 
-Route::get('/historial_promociones', function() {
+/*Route::get('/historial_promociones', function() {
     return view('Admin/Historial_Promociones');
-});
+});*/
 
 Route::get('/historial_reservaciones', function() {
     return view('Admin/Historial_Reservaciones');
