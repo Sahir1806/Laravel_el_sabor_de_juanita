@@ -10,7 +10,7 @@ class HistorialPromociones extends Controller
     // Mostrar todas las promociones
     public function index()
     {
-         $promociones = Historial_Promociones::all();
+        $promociones = Historial_Promociones::all();
         return view('Admin.Historial_Promociones', compact('promociones'));
     }
 
