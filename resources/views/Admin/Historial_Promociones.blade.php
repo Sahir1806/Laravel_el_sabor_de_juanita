@@ -120,7 +120,7 @@
           <td>{{ $promo->id }}</td>
           <td>{{ $promo->nombre }}</td>
           <td>
-            <img src="{{ asset('promociones/' . $promo->imagen) }}" class="img-fluid img-thumbnail" width="100" alt="Imagen">
+            <img src="{{ asset('.public.images.promociones/' . $promo->imagen) }}" class="img-fluid img-thumbnail" width="100" alt="Imagen">
           </td>
           <td>{{ $promo->descripcion }}</td>
           <td>{{ $promo->descuento }}%</td>

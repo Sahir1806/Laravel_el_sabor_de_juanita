@@ -79,7 +79,7 @@ Route::get('/historial_bienvenida', function() {
 
 /*Route::get('/historial_promociones', function() {
     return view('Admin/Historial_Promociones');
-});*/
+});
 
 Route::get('/historial_reservaciones', function() {
     return view('Admin/Historial_Reservaciones');
@@ -88,7 +88,7 @@ Route::get('/historial_reservaciones', function() {
 Route::get('/menu_verificacion', function() {
     return view('Admin/Menu_Verificacion');
 });
-
+*/
 Route::get('/prueba', function() {
     return view('/Prueba');
 });
