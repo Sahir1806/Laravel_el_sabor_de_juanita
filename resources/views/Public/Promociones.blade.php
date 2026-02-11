@@ -23,17 +23,17 @@
             @foreach($promociones as $promocion)
                 <div class="promo-card">
                     @if($promocion->imagen)
-                        <img src="{{ asset($promocion->imagen) }}" alt="{{ $promocion->titulo }}">
+                        <img src="{{ asset('public.images.promociones',$promocion->imagen) }}" alt="{{ $promocion->nombre }}">
                     @else
                         <img src="{{ asset('images/default-promo.jpg') }}" alt="Promoción">
                     @endif
                     <div class="promo-content">
-                        <h3>{{ $promocion->titulo }}</h3>
+                        <h3>{{ $promocion->nombre }}</h3>
                         <p>{{ $promocion->descripcion }}</p>
                         <small class="text-muted">
-                           Válido del {{ $promocion->fecha_inicio}} 
+                            Válido del {{ $promocion->fecha_inicio}} 
                             al {{ $promocion->fecha_fin}}
-                        </small>    
+                        </small> 
                     </div>
                 </div>
             @endforeach

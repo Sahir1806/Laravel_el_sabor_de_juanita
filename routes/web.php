@@ -35,22 +35,27 @@ Route::resource('Historial_Reservaciones', HistorialReservacionesController::cla
     'index', 'store', 'destroy']);
 
 
-Route::resource('menu_verificacion', MenuVerificacionController::class);
 Route::get('/menu', [MenuController::class, 'index'])->name('menu.publico');
+Route::get('/menu_verificacion', [MenuVerificacionController::class, 'index'])->name('menu_verificacion.index');
+Route::get('/menu_verificacion/create', [MenuVerificacionController::class, 'create'])->name('menu_verificacion.create');
+Route::post('/menu_verificacion', [MenuVerificacionController::class, 'store'])->name('menu_verificacion.store');
+Route::get('/menu_verificacion/{id}/edit', [MenuVerificacionController::class, 'edit'])->name('menu_verificacion.edit');
+Route::put('/menu_verificacion/{id}', [MenuVerificacionController::class, 'update'])->name('menu_verificacion.update');
+Route::delete('/menu_verificacion/{id}', [MenuVerificacionController::class, 'destroy'])->name('menu_verificacion.destroy');
 
-Route::resource('historial_bienvenida', HistorialBienvenidaController::class);
 Route::get('/bienvenida', [BienvenidaController::class, 'index'])->name('bienvenida.publica');
+Route::get('/historial_bienvenida', [HistorialBienvenidaController::class, 'index'])->name('historial_bienvenida.index');
+Route::post('/historial_bienvenida', [HistorialBienvenidaController::class, 'store'])->name('historial_bienvenida.store');
+Route::get('/historial_bienvenida/{id}/edit', [HistorialBienvenidaController::class, 'edit'])->name('historial_bienvenida.edit');
+Route::put('/historial_bienvenida/{id}', [HistorialBienvenidaController::class, 'update'])->name('historial_bienvenida.update');
+Route::delete('/historial_bienvenida/{id}', [HistorialBienvenidaController::class, 'destroy'])->name('historial_bienvenida.destroy');
+
 
 Route::get('/no', function() {
     return view('/assets/header');
 });
 
-
-
-
-
-
-
+ 
 Route::get('/', function () {
     return view('welcome');
 });
@@ -66,18 +71,6 @@ Route::get('/menu',function() {
 Route::get('/promociones',function() {
     return view('/Public/Promociones');
 });
-*/
-Route::get('/reservaciones',function() {
-    return view('/Public/Reservaciones');
-});
-
-Route::get('/portal', function() {
-    return view('Admin/Portal');
-});
-
-/*Route::get('/historial_bienvenida', function() {
-    return view('Admin/Historial_Bienvenida');
-}); 
 
 Route::get('/historial_promociones', function() {
     return view('Admin/Historial_Promociones');
@@ -89,7 +82,17 @@ Route::get('/historial_reservaciones', function() {
 
 Route::get('/menu_verificacion', function() {
     return view('Admin/Menu_Verificacion');
-});*/
+});
+
+*/
+Route::get('/reservaciones',function() {
+    return view('/Public/Reservaciones');
+});
+
+Route::get('/portal', function() {
+    return view('Admin/Portal');
+});
+
 
 Route::get('/prueba', function() {
     return view('/Prueba');

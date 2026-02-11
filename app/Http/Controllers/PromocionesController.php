@@ -12,6 +12,6 @@ class PromocionesController extends Controller
     //return 'hola';
     $promociones = Promociones::all();
         //dd($promociones->toJson());
-        return view('Public.Promociones', compact('promociones'));
+        return view('Public/Promociones', compact('promociones'));
     }
 }

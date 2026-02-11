@@ -27,7 +27,7 @@
 
                    <div class="card shadow-sm mb-4">
                     <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
-                        <span>Gestión de Menús</span>
+                        <span>Gestión de Bienvenidas</span>
                         <button class="btn btn-light btn-sm" data-bs-toggle="collapse" data-bs-target="#cartitaAcciones">
                             Ver detalles
                         </button>
