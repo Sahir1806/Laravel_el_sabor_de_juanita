@@ -8,13 +8,13 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\HistorialPromociones;
 use App\Http\Controllers\HistorialReservacionesController;
 use App\Http\Controllers\MenuVerificacionController;
+use App\Http\Controllers\HistorialBienvenidaController;
+use App\Http\Controllers\BienvenidaController;
+
 
 
 
 Route::get('/Promociones', [PromocionesController::class, 'index'])->name('promociones.index'); /*Conexion Promociones*/
-
-
-
 
 Route::get('/historial_promociones', [HistorialPromociones::class, 'index'])->name('historial_promociones.index'); /*Conexion*/
 Route::post('/Historial_Promociones', [HistorialPromociones::class, 'store'])->name('Historial_Promociones.store'); /*Inserta los datos*/
@@ -34,10 +34,12 @@ Route::get('/historial_reservaciones', [HistorialReservacionesController::class,
 Route::resource('Historial_Reservaciones', HistorialReservacionesController::class)->only([
     'index', 'store', 'destroy']);
 
-Route::get('/menu_verificacion', [MenuController::class, 'index']);
-Route::resource('Menu_Verificacion', MenuVerificacionController::class)->only([
-    'index', 'store', 'destroy'
-]);
+
+Route::resource('menu_verificacion', MenuVerificacionController::class);
+Route::get('/menu', [MenuController::class, 'index'])->name('menu.publico');
+
+Route::resource('historial_bienvenida', HistorialBienvenidaController::class);
+Route::get('/bienvenida', [BienvenidaController::class, 'index'])->name('bienvenida.publica');
 
 Route::get('/no', function() {
     return view('/assets/header');
@@ -53,7 +55,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/bienvenida', function() { 
+/*Route::get('/bienvenida', function() { 
     return view('/Public/Bienvenida'); 
 });
 
@@ -73,13 +75,13 @@ Route::get('/portal', function() {
     return view('Admin/Portal');
 });
 
-Route::get('/historial_bienvenida', function() {
+/*Route::get('/historial_bienvenida', function() {
     return view('Admin/Historial_Bienvenida');
 }); 
 
-/*Route::get('/historial_promociones', function() {
+Route::get('/historial_promociones', function() {
     return view('Admin/Historial_Promociones');
-});*/
+});
 
 Route::get('/historial_reservaciones', function() {
     return view('Admin/Historial_Reservaciones');
@@ -87,7 +89,7 @@ Route::get('/historial_reservaciones', function() {
 
 Route::get('/menu_verificacion', function() {
     return view('Admin/Menu_Verificacion');
-});
+});*/
 
 Route::get('/prueba', function() {
     return view('/Prueba');

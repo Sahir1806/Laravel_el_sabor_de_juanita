@@ -40,11 +40,11 @@
 
 
 <div class="imagenes">
-  <img src="{{ asset('images/Banner9.jpg') }}" alt="Banner 1">
-  <img src="{{ asset('images/Banner3.jpg') }}" alt="Banner 3">
-  <img src="{{ asset('images/Banner10.jpg') }}" alt="Banner 10">
-  <img src="{{ asset('images/Banner8.jpg') }}" alt="Banner 8">
-  <img src="{{ asset('images/Banner 5.jpg') }}" alt="Banner 5">
+ @forelse($bienvenidas as $bienvenida)
+        <img src="{{ asset($bienvenida->imagen) }}" alt="Imagen bienvenida" class="m-2" style="max-width:300px; border:2px solid #f0c090; border-radius:10px;">
+    @empty
+        <p class="text-muted">No hay imágenes de bienvenida activas.</p>
+    @endforelse
 </div>
 
 <hr>

@@ -9,11 +9,11 @@ class MenuVerificacion extends Model
 {
     use HasFactory;
 
-    protected $table = 'menus';
+    protected $table = 'menus'; // apunta a la tabla correcta
 
     protected $fillable = [
         'nombre',
-        'url',
+        'imagen',
         'fecha_publicación',
         'estado',
     ];

@@ -11,16 +11,16 @@ class MenuVerificacionSeeder extends Seeder
     {
         MenuVerificacion::create([
             'nombre' => 'Menú Principal',
-            'url' => '/menu/principal',
+            'imagen' => 'imagenes_menu/principal.jpg',
             'fecha_publicación' => '2024-06-01',
-            'estado' => true,
+            'estado' => 1,
         ]);
 
         MenuVerificacion::create([
             'nombre' => 'Menú Vegetariano',
-            'url' => '/menu/vegetariano',
+            'imagen' => 'imagenes_menu/vegetariano.jpg',
             'fecha_publicación' => '2024-06-15',
-            'estado' => true,
+            'estado' => 1,
         ]);
     }
 }
