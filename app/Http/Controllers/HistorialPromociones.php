@@ -16,28 +16,18 @@ class HistorialPromociones extends Controller
     // Guardar nueva promoción
     public function store(Request $request)
     {
-        $request->validate([
-            'nombre' => 'required',
-            'imagen' => 'required|image|mimes:jpg,jpeg,png',
-            'descripcion' => 'required',
-            'descuento' => 'required|integer',
-            'fecha_inicio' => 'required|date',
-            'fecha_fin' => 'required|date',
-        ]);
+        $data = $request->all();
 
-        $imagenNombre = time() . '.' . $request->imagen->extension();
-        $request->imagen->move(public_path('promociones'), $imagenNombre);
+        if ($request->hasFile('imagen')) {
+            $file = $request->file('imagen');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('images/imagenes_promo'), $filename);
+            $data['imagen'] = 'images/imagenes_promo/' . $filename;
+        }
 
-        Historial_Promociones::create([
-            'nombre' => $request->nombre,
-            'imagen' => $imagenNombre,
-            'descripcion' => $request->descripcion,
-            'descuento' => $request->descuento,
-            'fecha_inicio' => $request->fecha_inicio,
-            'fecha_fin' => $request->fecha_fin,
-        ]);
+        Historial_Promociones::create($data);
 
-        return redirect()->route('Historial_Promociones.index')->with('success', 'Promoción guardada correctamente.');
+        return redirect()->route('Historial_Promociones.index')->with('success', 'Promocion guardada correctamente');
     }
 
     // Eliminar promoción

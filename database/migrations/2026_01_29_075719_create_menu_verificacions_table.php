@@ -7,7 +7,8 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-       Schema::create('menus', function (Blueprint $table) {
+                if (!Schema::hasTable('menus')) {
+    Schema::create('menus', function (Blueprint $table) {
     $table->id();
     $table->string('nombre');
     $table->string('imagen');
@@ -15,6 +16,7 @@ return new class extends Migration {
     $table->boolean('estado')->default(1);
     $table->timestamps();
 });
+                }
     }
 
     public function down(): void

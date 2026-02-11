@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
         $this->call(UsuarioSeeder::class);
-        $this->call(MenuSeeder::class);
+        $this->call(MenuVerificacionSeeder::class);
         $this->call(PromocionesSeeder::class);
         $this->call(ReservacionesSeeder::class);    
     }

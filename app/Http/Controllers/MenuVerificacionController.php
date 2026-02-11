@@ -10,7 +10,7 @@ class MenuVerificacionController extends Controller
     public function index()
     {
         $menus = Menu::all();
-        return view('admin.Menu_Verificacion', compact('menus'));
+        return view('Admin.Menu_Verificacion', compact('menus'));
     }
 
     public function store(Request $request)

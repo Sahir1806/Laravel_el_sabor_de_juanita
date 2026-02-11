@@ -11,17 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-       Schema::create('historial_reservaciones', function (Blueprint $table) {
-    $table->id();
-    $table->string('nombre');
-    $table->integer('personas');
-    $table->date('fecha');
-    $table->time('hora');
-    $table->string('telefono');
-    $table->string('correo');
-    $table->text('comentarios')->nullable();
-    $table->timestamps();
-});
+        // SOLO crea la tabla si NO existe
+        if (!Schema::hasTable('historial_reservaciones')) {
+            Schema::create('historial_reservaciones', function (Blueprint $table) {
+                $table->id();
+                $table->string('nombre');
+                $table->integer('personas');
+                $table->date('fecha');
+                $table->time('hora');
+                $table->string('telefono');
+                $table->string('correo');
+                $table->text('comentarios')->nullable();
+                $table->timestamps();
+            });
+        }
     }
 
     /**
@@ -29,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('historial_reservacions');
+        Schema::dropIfExists('historial_reservaciones'); // CORREGIDO: 'historial_reservaciones' no 'historial_reservacions'
     }
 };

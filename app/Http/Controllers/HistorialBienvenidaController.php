@@ -10,7 +10,7 @@ class HistorialBienvenidaController extends Controller
     public function index()
     {
         $bienvenidas = Historial_Bienvenida::all();
-        return view('admin.Historial_Bienvenida', compact('bienvenidas'));
+        return view('Admin.Historial_Bienvenida', compact('bienvenidas'));
     }
 
     public function store(Request $request)
