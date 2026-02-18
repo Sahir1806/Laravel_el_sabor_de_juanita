@@ -12,10 +12,9 @@ use App\Http\Controllers\HistorialBienvenidaController;
 use App\Http\Controllers\BienvenidaController;
 
 
-
+/*Promociones*/
 
 Route::get('/Promociones', [PromocionesController::class, 'index'])->name('promociones.index'); /*Conexion Promociones*/
-
 Route::get('/historial_promociones', [HistorialPromociones::class, 'index'])->name('historial_promociones.index'); /*Conexion*/
 Route::post('/Historial_Promociones', [HistorialPromociones::class, 'store'])->name('Historial_Promociones.store'); /*Inserta los datos*/
 Route::delete('/Historial_Promociones/{id}', [HistorialPromociones::class, 'destroy'])->name('Historial_Promociones.destroy'); /*Elimina los datos*/
@@ -25,15 +24,17 @@ Route::get('/historial_promociones', [HistorialPromociones::class, 'index'])->na
 
 Route::get('/prueba', [UsuarioController::class, 'index']);
 
+/*Reservaciones*/
 
-Route::get('/historial_reservaciones', [ReservacionesController::class, 'index']);
 Route::post('/guardar-reserva', [ReservacionesController::class, 'store'])->name('reservaciones.store');
 Route::post('/reservar', [ReservacionesController::class, 'store'])->name('reservaciones.store');
-Route::get('/Historial_Reservaciones', [ReservacionesController::class, 'historial'])->name('reservaciones.historial');
 Route::get('/historial_reservaciones', [HistorialReservacionesController::class, 'index'])->name('Historial_Reservaciones.index');
-Route::resource('Historial_Reservaciones', HistorialReservacionesController::class)->only([
-    'index', 'store', 'destroy']);
+Route::post('/historial_reservaciones', [HistorialReservacionesController::class, 'store'])->name('Historial_Reservaciones.store');
+Route::get('/historial_reservaciones/{id}/edit', [HistorialReservacionesController::class, 'edit'])->name('Historial_Reservaciones.edit');
+Route::put('/historial_reservaciones/{id}', [HistorialReservacionesController::class, 'update'])->name('Historial_Reservaciones.update');
+Route::delete('/historial_reservaciones/{id}', [HistorialReservacionesController::class, 'destroy'])->name('Historial_Reservaciones.destroy');
 
+/*Menu*/
 
 Route::get('/menu', [MenuController::class, 'index'])->name('menu.publico');
 Route::get('/menu_verificacion', [MenuVerificacionController::class, 'index'])->name('menu_verificacion.index');
@@ -43,13 +44,14 @@ Route::get('/menu_verificacion/{id}/edit', [MenuVerificacionController::class, '
 Route::put('/menu_verificacion/{id}', [MenuVerificacionController::class, 'update'])->name('menu_verificacion.update');
 Route::delete('/menu_verificacion/{id}', [MenuVerificacionController::class, 'destroy'])->name('menu_verificacion.destroy');
 
+/*Bienvenida*/
+
 Route::get('/bienvenida', [BienvenidaController::class, 'index'])->name('bienvenida.publica');
 Route::get('/historial_bienvenida', [HistorialBienvenidaController::class, 'index'])->name('historial_bienvenida.index');
 Route::post('/historial_bienvenida', [HistorialBienvenidaController::class, 'store'])->name('historial_bienvenida.store');
 Route::get('/historial_bienvenida/{id}/edit', [HistorialBienvenidaController::class, 'edit'])->name('historial_bienvenida.edit');
 Route::put('/historial_bienvenida/{id}', [HistorialBienvenidaController::class, 'update'])->name('historial_bienvenida.update');
 Route::delete('/historial_bienvenida/{id}', [HistorialBienvenidaController::class, 'destroy'])->name('historial_bienvenida.destroy');
-
 
 Route::get('/no', function() {
     return view('/assets/header');

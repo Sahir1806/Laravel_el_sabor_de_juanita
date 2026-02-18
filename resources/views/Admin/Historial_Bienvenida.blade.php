@@ -37,27 +37,41 @@
                         <div class="card-body">
                             <h2 class="mb-4">Verificación de Bienvenida</h2>
 
-                <!-- Formulario -->
-                <form action="{{ route('historial_bienvenida.store') }}" method="POST" enctype="multipart/form-data" class="mb-4">
-                    @csrf
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <input type="file" name="imagen" class="form-control" accept="image/*" required>
-                        </div>
-                        <div class="col-md-6">
-                            <select name="estado" class="form-select">
-                                <option value="1">Activo</option>
-                                <option value="0">Inactivo</option>
-                            </select>
-                        </div>
+                           <!-- Formulario -->
+            <form action="{{ isset($bienvenida) ? route('historial_bienvenida.update',$bienvenida->id) : route('historial_bienvenida.store') }}" 
+                  method="POST" enctype="multipart/form-data" class="mb-4">
+                @csrf
+                @if(isset($bienvenida))
+                    @method('PUT')
+                @endif
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="file" name="imagen" class="form-control" accept="image/*" 
+                               @if(!isset($bienvenida)) required @endif>
                     </div>
-                    <div class="text-end mt-3">
-                        <button type="submit" class="btn btn-success">Guardar Bienvenida</button>
+                    <div class="col-md-6">
+                        <select name="estado" class="form-select">
+                            <option value="1" {{ (isset($bienvenida) && $bienvenida->estado==1) ? 'selected' : '' }}>Activo</option>
+                            <option value="0" {{ (isset($bienvenida) && $bienvenida->estado==0) ? 'selected' : '' }}>Inactivo</option>
+                        </select>
                     </div>
-                </form>
-            </div>
-        </div>
+                </div>
+
+         <div class="text-end mt-3">
+            <button type="submit" class="btn btn-success">
+             {{ isset($bienvenida) ? 'Editar Bienvenida' : 'Guardar Bienvenida' }}
+            </button>
+            @if(isset($bienvenida))
+            <a href="{{ route('historial_bienvenida.index') }}" class="btn btn-secondary ms-2">
+            Cancelar
+            </a>
+            @endif
+         </div>
+            </form>
+          </div>
     </div>
+ </div>
 
     <hr>
 
@@ -107,3 +121,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
+
+           

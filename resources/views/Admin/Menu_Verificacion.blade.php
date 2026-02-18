@@ -45,36 +45,51 @@
                     <div id="cartitaAcciones" class="collapse">
                         <div class="card-body">
                             <h2 class="mb-4">Verificación de Menús</h2>
+                         <!-- Formulario -->
+            <form action="{{ isset($menu) ? route('menu_verificacion.update',$menu->id) : route('menu_verificacion.store') }}" 
+                  method="POST" enctype="multipart/form-data" class="mb-4">
+                @csrf
+                @if(isset($menu))
+                    @method('PUT')
+                @endif
 
-                            <!-- Formulario -->
-                            <form action="{{ route('menu_verificacion.store') }}" method="POST" enctype="multipart/form-data" class="mb-4">
-                                @csrf
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <input type="text" name="nombre" class="form-control" placeholder="Descripcion" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="file" name="imagen" class="form-control" accept="image/*" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <input type="date" name="fecha_publicación" class="form-control" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <select name="estado" class="form-select">
-                                            <option value="1">Activo</option>
-                                            <option value="0">Inactivo</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="text-end mt-3">
-                                    <button type="submit" class="btn btn-success">Guardar Menú</button>
-                                </div>
-                            </form>
-                        </div>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <input type="text" name="nombre" class="form-control" placeholder="Descripcion" 
+                               value="{{ $menu->nombre ?? '' }}" required>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="file" name="imagen" class="form-control" accept="image/*" 
+                               @if(!isset($menu)) required @endif>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="date" name="fecha_publicación" class="form-control" 
+                               value="{{ $menu->fecha_publicación ?? '' }}" required>
+                    </div>
+                    <div class="col-md-6">
+                        <select name="estado" class="form-select">
+                            <option value="1" {{ (isset($menu) && $menu->estado==1) ? 'selected' : '' }}>Activo</option>
+                            <option value="0" {{ (isset($menu) && $menu->estado==0) ? 'selected' : '' }}>Inactivo</option>
+                        </select>
                     </div>
                 </div>
 
-                <hr>
+            <div class="text-end mt-3">
+                <button type="submit" class="btn btn-success">
+                {{ isset($menu) ? 'Editar Menú' : 'Guardar Menú' }}
+                </button>
+                 @if(isset($menu))
+                <a href="{{ route('menu_verificacion.index') }}" class="btn btn-secondary ms-2">
+                 Cancelar
+                </a>
+                @endif
+            </div>
+            </form>
+        </div>
+    </div>
+ </div>
+
+    <hr>
 
                 <!-- Tabla -->
                 <table class="table table-bordered table-striped">
@@ -95,7 +110,6 @@
                                 <td>{{ $menu->nombre }}</td>
                                 <td>
                                     @if($menu->imagen)
-                                        <!-- Aquí ya se muestra correctamente la imagen -->
                                         <img src="{{ asset($menu->imagen) }}" alt="Imagen del menú" width="120">
                                     @else
                                         Sin imagen
