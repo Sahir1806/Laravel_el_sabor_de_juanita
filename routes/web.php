@@ -57,7 +57,7 @@ Route::get('/no', function() {
     return view('/assets/header');
 });
 
- 
+
 Route::get('/', function () {
     return view('welcome');
 });

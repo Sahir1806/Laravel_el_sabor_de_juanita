@@ -120,7 +120,11 @@
           <td>{{ $promo->id }}</td>
           <td>{{ $promo->nombre }}</td>
           <td>
-            <img src="{{ asset('.public.images.promociones/' . $promo->imagen) }}" class="img-fluid img-thumbnail" width="100" alt="Imagen">
+              @if($promo->imagen)
+                  <img src="{{ asset($promo->imagen) }}" class="img-fluid img-thumbnail" width="100" alt="Imagen">
+              @else
+                  <img src="{{ asset('images/imagenes_promo/1770845057_Screenshot_20260204_151447.png') }}" class="img-fluid img-thumbnail" width="100" alt="Sin imagen">
+              @endif
           </td>
           <td>{{ $promo->descripcion }}</td>
           <td>{{ $promo->descuento }}%</td>
