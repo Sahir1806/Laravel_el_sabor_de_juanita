@@ -14,7 +14,7 @@ use App\Http\Controllers\BienvenidaController;
 
 /*Promociones*/
 
-Route::get('/Promociones', [PromocionesController::class, 'index'])->name('promociones.index'); /*Conexion Promociones*/
+Route::get('/promociones', [PromocionesController::class, 'index'])->name('promociones.index'); /*Conexion Promociones*/
 Route::get('/historial_promociones', [HistorialPromociones::class, 'index'])->name('historial_promociones.index'); /*Conexion*/
 Route::post('/Historial_Promociones', [HistorialPromociones::class, 'store'])->name('Historial_Promociones.store'); /*Inserta los datos*/
 Route::delete('/Historial_Promociones/{id}', [HistorialPromociones::class, 'destroy'])->name('Historial_Promociones.destroy'); /*Elimina los datos*/
@@ -62,31 +62,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-/*Route::get('/bienvenida', function() { 
-    return view('/Public/Bienvenida'); 
-});
-
-Route::get('/menu',function() {
-    return view('/Public/Menu');
-});
-/*
-Route::get('/promociones',function() {
-    return view('/Public/Promociones');
-});
-
-Route::get('/historial_promociones', function() {
-    return view('Admin/Historial_Promociones');
-});
-
-Route::get('/historial_reservaciones', function() {
-    return view('Admin/Historial_Reservaciones');
-});
-
-Route::get('/menu_verificacion', function() {
-    return view('Admin/Menu_Verificacion');
-});
-
-*/
 Route::get('/reservaciones',function() {
     return view('/Public/Reservaciones');
 });

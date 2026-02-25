@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promociones | El Sabor de Juanita</title>
+    <title>Promociones</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>  
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
             @foreach($promociones as $promocion)
                 <div class="promo-card">
                     @if($promocion->imagen)
-                        <img src="{{ asset('public.images.promociones',$promocion->imagen) }}" alt="{{ $promocion->nombre }}">
+                        <img src="{{ asset('public.images.imagenes_promo',$promocion->imagen) }}" alt="{{ $promocion->nombre }}">
                     @else
                         <img src="{{ asset('images/default-promo.jpg') }}" alt="Promoción">
                     @endif

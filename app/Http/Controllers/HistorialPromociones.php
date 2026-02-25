@@ -22,7 +22,7 @@ class HistorialPromociones extends Controller
             $file = $request->file('imagen');
             $filename = time() . '_' . $file->getClientOriginalName();
             $file->move(public_path('images/imagenes_promo'), $filename);
-            $data['imagen'] = 'images/imagenes_promo/' . $filename;
+            $data['imagen'] = 'images/imagenes_promo' . $filename;
         }
 
         Historial_Promociones::create($data);

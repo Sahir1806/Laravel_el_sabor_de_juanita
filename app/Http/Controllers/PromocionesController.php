@@ -9,9 +9,9 @@ class PromocionesController extends Controller
 {
     public function index()
     {
-    //return 'hola';
+
     $promociones = Promociones::all();
-        //dd($promociones->toJson());
-        return view('Public/Promociones', compact('promociones'));
+    return view('Public.Promociones', compact('promociones'));
+    
     }
 }
