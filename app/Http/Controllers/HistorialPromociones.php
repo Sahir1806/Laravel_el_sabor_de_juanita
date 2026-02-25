@@ -39,12 +39,6 @@ class HistorialPromociones extends Controller
         return redirect()->route('Historial_Promociones.index')->with('success', 'Promoción guardada correctamente');
     }
 
-    // Editar promoción
-    public function edit($id)
-    {
-        $promo = Historial_Promociones::findOrFail($id);
-        return view('Admin.Editar_Promocion', compact('promo'));
-    }
 
     // Actualizar promoción
     public function update(Request $request, $id)

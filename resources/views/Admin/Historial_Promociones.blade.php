@@ -138,9 +138,6 @@
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Seguro que deseas eliminar esta promoción?')">Borrar</button>
               </form>
-
-              <!-- Botón editar -->
-              <a href="{{ route('Historial_Promociones.edit', $promo->id) }}" class="btn btn-warning btn-sm">Editar</a>
             </div>
           </td>
         </tr>
